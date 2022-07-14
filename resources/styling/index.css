@@ -9,37 +9,36 @@
 }
 
 html {
-    background-color: #2c2c2c;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0,0,0,0.65)),
+    url(./images/magical_girl.jpg);
     color: #f5f5f4;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
 }
 
 header {
     width: 95%;
     margin: auto;
-    padding: 0 20px;
-    border-radius: 15px;
+    padding: 0 1.25em;
 }
 
 main {
-    width: 70%;
-    height: 800px;
-    border-radius: 5px;
-    margin: auto;
-    background-color: #f5f5f4;
-    color: #222126;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,1);
+    display: flex;
+    height: 90vh;
 }
 
 nav {
     display: flex;
     margin: auto;
-    padding: 25px 0;
+    padding: 1em 0 1.6em 0;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
 
 .logo {
-    font-size: 35px;
+    font-size: 2.2rem;
     cursor: pointer;
     color: #f5f5f4;
     font-weight: 800;
@@ -51,7 +50,7 @@ nav {
 nav ul li {
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 1.25em;
 }
 
 nav ul li a {
@@ -62,44 +61,53 @@ nav ul li a {
 }
 
 .grid-container {
-    height: 100%;
-    width: 100%;
+    width: 80%;
+    height: 75vh;
+    border-radius: 5px;
+    margin: auto;
+    /* box-shadow: 5px 12px 15px 5px rgba(0,0,0,1); */
     display: grid;
-    grid-template-areas:
-    'mainApp mainApp .. ..'
-    'mainApp mainApp .. ..';
+    grid-template-columns: auto auto auto;
 }
 
 .gridShop {
-    grid-area: mainApp;
-    max-width: 400px;
-}
-
-.thickboi{
-    min-width: 350px;
+    grid-row: span 2;
 }
 
 .card {
-    margin: 30px 20px;
-    padding: 20px;
-    background-color: #2c2c2c;
-    color: #e0bc6e;
+    cursor: pointer;
+    margin: 1.9em 1.25em;
+    padding: 1.25em;
+    width: 25em;
+    color: #f5f5f4;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
     border-radius: 15px;
     text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.card:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.thickboi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30em;
 }
 
 .card h1 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     letter-spacing: 1.5px;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .card p {
     font-family: 'Quicksand', sans-serif;
     color: #f5f5f4;
-    margin: 30px 0;
+    margin: 2em 0;
     line-height: 23px;
     letter-spacing: 1.2px;
 }
