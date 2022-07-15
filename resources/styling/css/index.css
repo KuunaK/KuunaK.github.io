@@ -60,6 +60,7 @@ nav {
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
+    text-decoration: none;
 }
 
 
@@ -74,6 +75,21 @@ nav ul li a {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     color: #f5f5f4;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f5f5f4;
 }
 
 .grid-container {
@@ -126,4 +142,65 @@ nav ul li a {
     margin: 2em 0;
     line-height: 23px;
     letter-spacing: 1.2px;
+}
+
+@media(max-width:2000px){
+    body{
+        overflow: auto;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav ul li a {
+        color: #222126;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #f5f5f4;
+        transition: 0.3s;
+        border-top-left-radius: 10px;
+        height: fit-content;
+    }
+
+    .nav-item {
+        margin: 16px;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .grid-container {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 300px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card {
+        height: 400px;
+    }
+    .thickboi {
+        height: 400px;
+    }
 }
