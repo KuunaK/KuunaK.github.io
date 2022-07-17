@@ -7,14 +7,14 @@
     font-family: sans-serif;
 }
 
-html {
+body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)),
     url(../images/magical_girl.jpg);
     color: #f5f5f4;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     overflow: auto;
-    height: 100vh;
 }
 
 header {
@@ -89,6 +89,9 @@ nav ul li a {
 @media(max-width:2000px){
     .hamburger {
         display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
     }
 
     .hamburger.active .bar:nth-child(2){
@@ -114,7 +117,8 @@ nav ul li a {
         background-color: #f5f5f4;
         transition: 0.3s;
         border-top-left-radius: 10px;
-        height: fit-content;
+        border-bottom-left-radius: 10px;
+        z-index: 2;
     }
 
     .nav-item {
