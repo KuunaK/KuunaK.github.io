@@ -86,7 +86,7 @@ nav ul li a {
     background-color: #f5f5f4;
 }
 
-@media(max-width:987){
+@media(max-width:987px){
     .hamburger {
         display: block;
         position: fixed;
