@@ -188,7 +188,6 @@ nav ul li a {
 
     .grid-container {
         display: flex;
-        margin-top: 550px;
         width: 100%;
         top: 300px;
         flex-direction: column;
@@ -197,11 +196,12 @@ nav ul li a {
         text-align: center;
     }
 
-    .card {
-        width: 350px;
+    .gridShop p {
+        display: none;
     }
 
-    .thickboi {
-        padding: 100px 0;
+    .card {
+        width: fit-content;
     }
+
 }
