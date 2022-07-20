@@ -15,10 +15,10 @@ body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    overflow: auto;
 }
 
 header {
-    width: 95%;
     margin: auto;
     padding: 0 1.25em;
 }
@@ -92,13 +92,11 @@ nav ul li a {
 }
 
 .grid-container {
-    width: 80%;
-    height: 75vh;
-    border-radius: 5px;
+    width: 95%;
+    height: 70vh;
     margin: auto;
-    /* box-shadow: 5px 12px 15px 5px rgba(0,0,0,1); */
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .gridShop {
@@ -110,16 +108,16 @@ nav ul li a {
     cursor: pointer;
     margin: 1.9em 1.25em;
     padding: 1.25em;
-    width: 25em;
     color: #f5f5f4;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
     border-radius: 15px;
     text-align: center;
-    transition: background-color 0.5s ease;
+    transition: 0.5s ease-in-out;
 }
 
 .card:hover {
-    background-color: rgba(28,110,164,0.5);
+    background-color: rgba(28,110,164,0.3);
+    backdrop-filter: blur(0.3rem);
 }
 
 .card a {
@@ -131,7 +129,6 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30em;
 }
 
 .card h1 {
@@ -155,6 +152,7 @@ nav ul li a {
         position: fixed;
         top: 20px;
         right: 20px;
+        z-index: 9999;
     }
 
     .hamburger.active .bar:nth-child(2){
@@ -168,46 +166,49 @@ nav ul li a {
     }
 
     nav ul li a {
-        color: #222126;
+        color: #f5f5f4;
+        font-weight: 400;
     }
 
     .nav-menu {
         display: flex;
         position: fixed;
-        right: -100%;
-        top: 70px;
+        background: hsl(0 0% 0% / 0.75);
+        inset: 0 0 0 100%;
+        padding: min(30vh, 10rem) 2em;
         flex-direction: column;
-        background-color: #f5f5f4;
         transition: 0.3s;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        gap: 2em;
         z-index: 2;
     }
 
+    @supports (backdrop-filter: blur(1rem)) {
+        .nav-menu {
+            background: rgba(51, 97, 150, 0.1);
+            backdrop-filter: blur(1rem);
+        }
+    }
+
     .nav-item {
-        margin: 16px;
+        margin-left: auto;
     }
 
     .nav-menu.active {
-        right: 0;
+        inset: 0 0 0 0%;
     }
 
     .grid-container {
         display: flex;
-        width: 100%;
-        top: 300px;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        gap: 3rem;
     }
-
-    .gridShop p {
-        display: none;
-    }
-
     .card {
-        width: fit-content;
+        width: 100%;
+        margin: 0;
+        backdrop-filter: blur;
     }
-
+    
+    .gridShop p {
+        color: rgba(245, 245, 244, 0.80);
+    }
 }

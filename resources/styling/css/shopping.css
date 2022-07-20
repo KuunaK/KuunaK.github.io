@@ -18,15 +18,12 @@ body {
 }
 
 header {
-    width: 95%;
-    margin: auto;
     padding: 0 1.25em;
 }
 
 
 nav {
     display: flex;
-    margin: auto;
     padding: 1em 0 1.6em 0;
     justify-content: space-between;
     align-items: center;
@@ -92,6 +89,7 @@ nav ul li a {
         position: fixed;
         top: 20px;
         right: 20px;
+        z-index: 9999;
     }
 
     .hamburger.active .bar:nth-child(2){
@@ -105,27 +103,34 @@ nav ul li a {
     }
 
     nav ul li a {
-        color: #222126;
+        color: #f5f5f4;
+        font-weight: 400;
     }
 
     .nav-menu {
         display: flex;
         position: fixed;
-        right: -100%;
-        top: 70px;
+        background: hsl(0 0% 0% / 0.75);
+        inset: 0 0 0 100%;
+        padding: min(30vh, 10rem) 2em;
         flex-direction: column;
-        background-color: #f5f5f4;
         transition: 0.3s;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        gap: 2em;
         z-index: 2;
     }
 
+    @supports (backdrop-filter: blur(1rem)) {
+        .nav-menu {
+            background: rgba(51, 97, 150, 0.1);
+            backdrop-filter: blur(1rem);
+        }
+    }
+
     .nav-item {
-        margin: 16px;
+        margin-left: auto;
     }
 
     .nav-menu.active {
-        right: 0;
+        inset: 0 0 0 0%;
     }
 }
