@@ -117,6 +117,7 @@ nav ul li a {
         transition: 0.3s;
         gap: 2em;
         z-index: 2;
+        touch-action: none;
     }
 
     @supports (backdrop-filter: blur(1rem)) {
