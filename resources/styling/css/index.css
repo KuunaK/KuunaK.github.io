@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Quicksand&display=swap');
 
+:root {
+    --font-main: 'Quicksand', sans-serif;
+    --clr-offwhite: #f5f5f4e1;
+    --clr-accent-blue: rgb(94, 186, 247);
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: inherit;   
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    
+}
+
+html,
+body {
+    height: 100%;
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)),
+    background-image: linear-gradient(rgba(14, 0, 17, 0.5), rgba(14,0,17,0.5)),
     url(../images/magical_girl.jpg);
-    color: #f5f5f4;
+    color: var(--clr-offwhite);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -19,7 +35,6 @@ body {
 }
 
 header {
-    margin: auto;
     padding: 0 1.25em;
 }
 
@@ -30,14 +45,13 @@ main {
 
 nav {
     display: flex;
-    margin: auto;
     padding: 1em 0 1.6em 0;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .active-page {
-    color: rgb(94, 186, 247);
+    color: var(--clr-accent-blue);
     position: relative;
 }
 
@@ -55,7 +69,7 @@ nav {
 .logo {
     font-size: 2.2rem;
     cursor: pointer;
-    color: #f5f5f4;
+    color: var(--clr-offwhite);
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
@@ -73,7 +87,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    color: #f5f5f4;
+    color: var(--clr-offwhite);
 }
 
 .hamburger {
@@ -88,62 +102,63 @@ nav ul li a {
     margin: 5px auto;
     border-radius: 25px;
     transition: all 0.3s ease-in-out;
-    background-color: #f5f5f4;
+    background-color: var(--clr-offwhite);
 }
 
 .grid-container {
+    display: grid;
     width: 95%;
     height: 70vh;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-.gridShop {
+.grid-row-span-2 {
     grid-row: span 2;
 }
 
 
 .card {
     cursor: pointer;
-    margin: 1.9em 1.25em;
     padding: 1.25em;
-    color: #f5f5f4;
+    color: var(--clr-offwhite);
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
     border-radius: 15px;
     text-align: center;
     transition: 0.5s ease-in-out;
 }
 
+
 .card:hover {
-    background-color: rgba(28,110,164,0.3);
+    background-color: #1c6ea41a;
     backdrop-filter: blur(0.3rem);
 }
 
 .card a {
     text-decoration: none;
-    color: #f5f5f4;
-}
-
-.thickboi {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--clr-offwhite);
 }
 
 .card h1 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font-main);
     font-weight: 300;
     letter-spacing: 1.5px;
     font-size: 2rem;
 }
 
 .card p {
-    font-family: 'Quicksand', sans-serif;
-    color: #f5f5f4;
-    margin: 2em 0;
+    font-family: var(--font-main);
+    color: var(--clr-offwhite);
+    padding: 2em 0;
     line-height: 23px;
     letter-spacing: 1.2px;
+}
+
+.thickboi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media(max-width:987px){
@@ -166,7 +181,7 @@ nav ul li a {
     }
 
     nav ul li a {
-        color: #f5f5f4;
+        color: var(--clr-offwhite);
         font-weight: 400;
     }
 
