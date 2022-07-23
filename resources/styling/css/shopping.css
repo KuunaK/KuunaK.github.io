@@ -5,6 +5,9 @@
     --font-header: 'Montserrat', sans-serif;
     --clr-offwhite: #f5f5f4e1;
     --clr-accent-blue: rgb(94, 186, 247);
+    --clr-accent-darkblue80: hsla(217 45% 20% / 0.8);
+    --clr-accent-darkblue30: hsla(217 45% 20% / 0.3);
+    --clr-accent-animblue: rgb(89, 153, 255);
 }
 
 
@@ -26,12 +29,13 @@ body {
 }
 
 body {
-    background-image: linear-gradient(rgba(14, 0, 17, 0.5), rgba(14,0,17,0.5)),
-    url(../images/magical_girl.jpg);
-    color: var(--clr-offwhite);
+    background-image: linear-gradient(rgba(0 0 0 / 0.7), rgba(0 0 0 / 0.7)),
+    url(../images/hand-lights.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    color: var(--clr-offwhite);
     overflow: auto;
 }
 
@@ -102,6 +106,11 @@ nav ul li a {
 }
 
 @media(max-width:987px){
+    body {
+        background-image: linear-gradient(rgba(11, 0, 14, 0.5), rgba(14,0,17,0.5)),
+                            url(../images/stars-in-jar.jpg);
+    }
+
     .hamburger {
         display: block;
         position: fixed;
@@ -151,5 +160,140 @@ nav ul li a {
 
     .nav-menu.active {
         inset: 0 0 0 0%;
+    }
+}
+
+/* Styling for list */
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+form {
+    height: 10%;
+    position: relative;
+}
+
+form input, form button {
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: none;
+    font-family: var(--font-main);
+    color: var(--clr-offwhite);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+    background: var(--clr-accent-darkblue30);
+}
+
+form button {
+    position: absolute;
+    right: 0;
+    background: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+form button:hover {
+    color: var(--clr-accent-animblue);
+    box-shadow: 0px 0px 12px 5px rgba(0,0,0,0.5)
+}
+
+.new-list-container {
+    position: relative;
+}
+
+.new-list-container label {
+    position: absolute;
+    height: 100%;
+    top: 5px;
+    font-size: 20px;
+    margin-inline: 0.5rem;
+    color: #f5f5f4be;
+    font-family: var(--font-main);
+    left: 0;
+    pointer-events: none;
+    transition: all 500ms ease, font-weight 1ms;
+}
+
+.new-list-line::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background: var(--clr-accent-animblue);
+    left: 0;
+    bottom: 0;
+    transition: 500ms ease;
+}
+
+.new-list-container input:focus ~ label,
+.new-list-container input:valid ~ label {
+    top: -15px;
+    left: -5px;
+    font-size: 13px; 
+    color: var(--clr-accent-animblue);
+    font-weight: 600;
+}
+
+.new-list-container input:focus + .new-list-line::after,
+.new-list-container input:valid + .new-list-line::after {
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* Add styling for new list entries */
+.list-container {
+    width: 100%;
+}
+.shopping-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 60%;
+    margin: auto;
+}
+
+.shopping-list-div {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    font-family: var(--font-main);
+    background: linear-gradient(rgba(0 0 0 / 0.5), rgba(0 0 0 / 0.2));
+    box-shadow: 5px 5px 10px 5px rgb(28, 52, 74);
+    padding: 1rem;
+    font-size: 1.25rem;
+    border-radius: 15px;
+}
+
+
+.shopping-list-div li {
+    list-style: none;
+}
+
+.delete-list-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: #5E1916;
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+@media(min-width: 987px){
+    .shopping-list {
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 }

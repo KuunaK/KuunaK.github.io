@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping</title>
     <link rel="stylesheet" href="../styling/css/shopping.css">
+    <script src="https://kit.fontawesome.com/ab174d881f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -22,6 +23,23 @@
             </div>
         </nav>
     </header>
+    <main>
+        <form>
+            <div class="new-list-container">
+                <input type="text" class="new-list-input" id="new-list-input" autocomplete="off" required>
+                <span class="new-list-line"></span>
+                <label for="new-list-input">Create new list</label>
+                <button type="submit" class="new-list-button">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        <div class="list-container">
+            <ul class="shopping-list">
+            </ul>
+        </div>
+    </main>
+    <script src="../js/shopping.js"></script>
     <script src="../js/nav_bar.js"></script>
 </body>
 </html>

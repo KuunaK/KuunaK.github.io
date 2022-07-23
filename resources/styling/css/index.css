@@ -25,7 +25,7 @@ body {
 }
 
 body {
-    background-image: linear-gradient(rgba(14, 0, 17, 0.5), rgba(14,0,17,0.5)),
+    background-image: linear-gradient(rgba(11, 0, 14, 0.5), rgba(14,0,17,0.5)),
     url(../images/magical_girl.jpg);
     color: var(--clr-offwhite);
     background-position: center;
