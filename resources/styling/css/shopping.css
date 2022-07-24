@@ -116,7 +116,7 @@ nav ul li a {
         position: fixed;
         top: 20px;
         right: 20px;
-        z-index: 9999;
+        z-index: 8999;
     }
 
     .hamburger.active .bar:nth-child(2){
@@ -257,9 +257,10 @@ input:focus {
 .shopping-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 5rem;
     width: 60%;
     margin: auto;
+    margin-bottom: 5rem;
 }
 
 .shopping-list-div {
@@ -272,11 +273,23 @@ input:focus {
     padding: 1rem;
     font-size: 1.25rem;
     border-radius: 15px;
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+.glowScale {
+    transition: 200ms ease-in-out;
+}
+
+.glowScale:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px 5px rgb(6, 109, 206); 
 }
 
 
 .shopping-list-div li {
     list-style: none;
+    letter-spacing: 2px;
 }
 
 .delete-list-button {
@@ -288,6 +301,49 @@ input:focus {
     color: #5E1916;
     font-size: 1.4rem;
     padding: 1rem;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.delete-list-button:hover {
+    transform: scale(1.2);
+    color: #9b2a24;
+}
+
+.delete-list-button i {
+    pointer-events: none;
+}
+
+
+.minimize-list-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: #5E1916;
+    font-size: 1.4rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.minimize-list-button:hover {
+    transform: scale(1.2);
+    color: #9b2a24;
+}
+
+.minimize-list-button i {
+    pointer-events: none;
+}
+
+.shopping-list-entry {
+    pointer-events: none;
+}
+
+.drop {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
 }
 
 @media(min-width: 987px){
@@ -296,4 +352,25 @@ input:focus {
         gap: 4rem;
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+.active-shopping-list {
+    cursor: default;
+    z-index: 9999;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    padding: 6rem 5rem;
+    background: linear-gradient(rgba(0 0 0 / 0.9), rgba(0 0 0 / 0.7));
+    border-radius: 0;
+}
+
+.active-shopping-list li {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.not-active-button {
+    display: none;
 }
