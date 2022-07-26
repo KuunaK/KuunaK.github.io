@@ -184,7 +184,6 @@ function addListEntry (e) {
 
 function deleteCheck(e){
     const item = e.target
-    console.log(item.parentElement)
     //Delete entry
     if (item.classList[0] === "trash-entry-button") {
         const listEntry = item.parentElement;
