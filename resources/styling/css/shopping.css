@@ -274,7 +274,7 @@ input:focus {
     font-size: 1.25rem;
     border-radius: 15px;
     cursor: pointer;
-    transition: 500ms ease;
+    transition: 1s ease;
 }
 
 .glowScale {
@@ -290,6 +290,7 @@ input:focus {
 .shopping-list-div li {
     list-style: none;
     letter-spacing: 2px;
+    pointer-events: none;
 }
 
 .delete-list-button {
@@ -308,10 +309,6 @@ input:focus {
 .delete-list-button:hover {
     transform: scale(1.2);
     color: #9b2a24;
-}
-
-.delete-list-button i {
-    pointer-events: none;
 }
 
 
@@ -333,13 +330,6 @@ input:focus {
     color: #9b2a24;
 }
 
-.minimize-list-button i {
-    pointer-events: none;
-}
-
-.shopping-list-entry {
-    pointer-events: none;
-}
 
 .drop {
     transform: translateY(8rem) rotateZ(20deg);
@@ -355,6 +345,10 @@ input:focus {
 }
 
 .active-shopping-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
     cursor: default;
     z-index: 9999;
     position: fixed;
@@ -364,13 +358,82 @@ input:focus {
     padding: 6rem 5rem;
     background: linear-gradient(rgba(0 0 0 / 0.9), rgba(0 0 0 / 0.7));
     border-radius: 0;
+    overflow: auto;
 }
 
 .active-shopping-list li {
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-underline-offset: 6px;
 }
 
-.not-active-button {
+.no-display {
     display: none;
+}
+
+.new-list-item-container {
+    width: 80%;
+    position: relative;
+}
+
+.new-list-item-input {
+    width: 100%;
+}
+
+.new-entry-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+button > i {
+    pointer-events: none;
+}
+
+
+.list-item-entry-container form {
+    max-height: 10px;
+}
+
+.shopping-list-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    gap: 1rem;
+}
+
+.inner-shopping-list-div {
+    background: var(--clr-accent-darkblue80);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 500ms ease;
+}
+
+.inner-shopping-list-div li {
+    flex: 1;
+    text-decoration: none;
+    padding-left: 0.5rem;
+}
+
+.check-entry-button,
+.trash-entry-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--clr-offwhite);
+}
+
+.check-entry-button {
+    background: green;
+}
+
+.trash-entry-button {
+    background: #9b2a24;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
